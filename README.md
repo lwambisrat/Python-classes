@@ -4,14 +4,14 @@ This project contains a `BankAccount` class in Python that demonstrates common b
 
 #Features
 
-- *Deposit and Withdraw:* Add or withdraw money, with checks for account status and minimum balance.
-- *Transfer Funds:* Send money to another account.
-- *Loan Management:* Request and repay loans.
-- *Interest Calculation:* Automatically apply interest to the balance.
-- *Account Status:* Freeze or unfreeze the account, and set a minimum required balance.
-- *Account Management:* Change account owner, view details, and close the account.
-- *Transaction History:* View all past transactions as a statement.
-- *Account Details:* Print all key details with a `__str__` method.
+- Deposit and Withdraw: Add or withdraw money, with checks for account status and minimum balance.
+- Transfer Funds: Send money to another account.
+- Loan Management: Request and repay loans.
+- Interest Calculation: Automatically apply interest to the balance.
+- Account Status: Freeze or unfreeze the account, and set a minimum required balance.
+- Account Management: Change account owner, view details, and close the account.
+- Transaction History: View all past transactions as a statement.
+- Account Details: Print all key details with a `__str__` method.
 
 # Example Usage
 
