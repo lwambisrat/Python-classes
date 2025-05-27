@@ -24,7 +24,7 @@ class BankAccount:
         self.min_balance = 0
     def deposit(self, amount):
         if self.is_frozen:
-            return "Account is frozen.  Cannot perform deposits."
+            return "Dear Customer your account is frozen.  Cannot perform deposits."
         if amount > 0:
             self.balance += amount
             self.transactions.append(f"Deposit: +${amount}")
@@ -33,31 +33,30 @@ class BankAccount:
             return "Invalid deposit amount. Amount must be positive."
     def withdraw(self, amount):
         if self.is_frozen:
-            return "Account is frozen. Cannot perform withdrawals."
+            return "Dear Customer your account is frozen.  Cannot perform deposits."
         if amount > 0:
             if self.balance - amount >= self.min_balance:  
                 self.balance -= amount
                 self.transactions.append(f"Withdrawal: -${amount}")
-                return f"Withdrew ${amount}. New balance: ${self.balance}"
+                return f"You have successfully withdrawn ${amount} from your CBK account. Your current balance is : ${self.balance}"
             else:
-                return "Withdrawal exceeds minimum balance requirement."
+                return "Your withdrawal request could not be processed. Insufficient funds in your account.Please check your available balance and try again."
         else:
             return "Invalid withdrawal amount. Amount must be positive."
     def transfer_funds(self, to_account, amount):
         if self.is_frozen:
-            return "Account is frozen.  Cannot transfer funds."
+            return "Dear Customer your account is frozen.  Cannot perform transfer."
         if amount > 0:
             if self.balance - amount >= self.min_balance:
                 self.balance -= amount
                 to_account.deposit(amount) 
                 self.transactions.append(f"Transfer to {to_account.account_number}: -${amount}")
-                return f"Successfully transferred ${amount} to {to_account.account_holder}."
+                return f"You have successfully transferred ${amount} to account number {to_account.account_holder}.Thank you for banking with CBK."
             else:
                 return "Transfer amount exceeds minimum balance requirement."
         else:
             return "Invalid transfer amount. Amount must be positive."
     def get_balance(self):
-        """Calculates balance based on transactions (Alternative method)"""
         balance = 0
         for transaction in self.transactions:
             parts = transaction.split(":")
@@ -93,7 +92,7 @@ class BankAccount:
         else:
             return "Invalid repayment amount. Amount must be positive."
     def view_account_details(self):
-        return f"Account Details:\nAccount Number: {self.account_number}\nAccount Holder: {self.account_holder}\nCurrent Balance: ${self.balance}\nLoan Balance: ${self.loan_balance}"
+        return f"Account Details: Account Number: {self.account_number}\n Account Holder: {self.account_holder}\n Current Balance: ${self.balance}\n Loan Balance: ${self.loan_balance}"
     def change_account_owner(self, new_owner):
         self.account_holder = new_owner
         return f"Account owner updated to {new_owner}"
@@ -111,17 +110,17 @@ class BankAccount:
     def freeze_account(self):
         if not self.is_frozen:
             self.is_frozen = True
-            return "Account has been frozen."
+            return "Your account has been frozen."
         else:
-            return "Account is already frozen."
+            return " Your account is already frozen."
     def unfreeze_account(self):
         if self.is_frozen:
             self.is_frozen = False
-            return "Account has been unfrozen."
+            return "Your account has been unfrozen."
         else:
-            return "Account is not frozen."
+            return "Your account is not frozen."
     def set_minimum_balance(self, min_balance):
-        if min_balance >= 0:  # Ensure minimum balance is not negative
+        if min_balance >= 0:  
             self.min_balance = min_balance
             return f"Minimum balance set to ${min_balance}"
         else:
@@ -133,7 +132,7 @@ class BankAccount:
         return "Account closed. All balances set to zero and transactions cleared."
     def __str__(self):
         return f"Account Number: {self.account_number}\nAccount Holder: {self.account_holder}\nBalance: ${self.balance}\nLoan Balance: ${self.loan_balance}\nFrozen: {self.is_frozen}\nMin. Balance: ${self.min_balance}"
-# Example Usage
+# 
 account1 = BankAccount("12345", "Alice Smith", 1000)
 account2 = BankAccount("67890", "Bob Johnson", 500)
 print(account1.deposit(200))
