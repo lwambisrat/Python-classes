@@ -6,17 +6,20 @@ This project implements Bank Account Management System in Python with two main c
 # Table of content
 
 -Installation
+
 -Usage
+
 -Features
+
 -Technologies
 
 
 # Installation
 
-- clone the repository     git clone git@github.com:lwambisrat/Python-classes.git
-- display the repository   cd Python-classes
--create file               touch bank_management_system.py
-- finally type              code .
+- clone the repository    = git clone git@github.com:lwambisrat/Python-classes.git
+- display the repository   =cd Python-classes
+-create file               =touch bank_management_system.py
+- finally type              =code .
 
 # Features
 
@@ -67,26 +70,42 @@ This project implements Bank Account Management System in Python with two main c
   # Usage
   
 -open vs code
+
 -open new terminal and type python3
+
 -from bank_account import Account
 
 -create new object from Account class a1 = Account("Lwam", "123456789")
+
 -create another object from Account class a2 = Account("Hewan", "987654321")
+
 -Then run the code
 
-print(a1.deposit(500))                # Deposit funds
-print(a1.withdraw(100))               # Withdraw funds
-print(a1.transfer_funds(200, a2))     # Transfer funds to Hewan
-a1.account_statement()                # Print Lwam's account statement
-print(a1.calculate_interest())        # Apply interest
-print(a1.freeze_account())            # Freeze Lwam's account
-print(a1.deposit(50))                 # Attempt deposit while frozen (should fail)
-print(a1.unfreeze_account())          # Unfreeze account
-print(a1.deposit(50))                 # Deposit after unfreezing
-print(a1.set_minimum_balance(100))    # Set minimum balance
-print(a1.withdraw(400))               # Attempt withdrawal violating minimum balance (should fail)
-print(a1.close_account())             # Close account and clear all transactions
-a1.account_statement()                # Print account statement after closing
+-print(a1.deposit(500))                # Deposit funds
+
+-print(a1.withdraw(100))               # Withdraw funds
+
+-print(a1.transfer_funds(200, a2))     # Transfer funds to Hewan
+
+-a1.account_statement()                # Print Lwam's account statement
+
+-print(a1.calculate_interest())        # Apply interest
+
+-print(a1.freeze_account())            # Freeze Lwam's account
+
+-print(a1.deposit(50))                 # Attempt deposit while frozen (should fail)
+
+-print(a1.unfreeze_account())          # Unfreeze account
+
+-print(a1.deposit(50))                 # Deposit after unfreezing
+
+-print(a1.set_minimum_balance(100))    # Set minimum balance
+
+-print(a1.withdraw(400))               # Attempt withdrawal violating minimum balance (should fail)
+
+-print(a1.close_account())             # Close account and clear all transactions
+
+-a1.account_statement()                # Print account statement after closing
 
 
 # Tchnologies
